@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { X, ZoomIn } from "lucide-react";
+import { ZoomIn } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 // Import portfolio images
@@ -36,187 +36,42 @@ import port29 from "@/assets/517799506_1347936030674688_2397577237440617164_n.jp
 import port30 from "@/assets/535069427_790669890410863_1046202333193987260_n.jpeg";
 
 const portfolioItems = [
-  {
-    id: 1,
-    image: port01,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-80", // Different heights for masonry effect
-  },
-  {
-    id: 2,
-    image: port02,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-64", // Different heights for masonry effect
-  },
-  {
-    id: 3,
-    image: port03,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-72", // Different heights for masonry effect
-  },
-  {
-    id: 4,
-    image: port04,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-64", // Different heights for masonry effect
-  },
-  {
-    id: 5,
-    image: port05,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-80", // Different heights for masonry effect
-  },
-  {
-    id: 6,
-    image: port06,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-72", // Different heights for masonry effect
-  },
-  {
-    id: 7,
-    image: port07,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-54", // Different heights for masonry effect
-  },
-  {
-    id: 8,
-    image: port08,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-96", // Different heights for masonry effect
-  },
-  {
-    id: 9,
-    image: port09,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-63", // Different heights for masonry effect
-  },
-  {
-    id: 10,
-    image: port10,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-77", // Different heights for masonry effect
-  },
-  {
-    id: 12,
-    image: port12,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-64", // Different heights for masonry effect
-  },
-  {
-    id: 13,
-    image: port13,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-80", // Different heights for masonry effect
-  },
-  {
-    id: 14,
-    image: port14,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-72", // Different heights for masonry effect
-  },
-  {
-    id: 15,
-    image: port15,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-58", // Different heights for masonry effect
-  },
-  {
-    id: 16,
-    image: port16,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-94", // Different heights for masonry effect
-  },
-  {
-    id: 17,
-    image: port17,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-68", // Different heights for masonry effect
-  },
-  {
-    id: 18,
-    image: port18,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-64", // Different heights for masonry effect
-  },
-  {
-    id: 19,
-    image: port19,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-74", // Different heights for masonry effect
-  },
-  {
-    id: 20,
-    image: port20,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-94", // Different heights for masonry effect
-  },
-  {
-    id: 21,
-    image: port21,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-74", // Different heights for masonry effect
-  },
-  {
-    id: 22,
-    image: port22,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-57", // Different heights for masonry effect
-  },
-  {
-    id: 23,
-    image: port23,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-62", // Different heights for masonry effect
-  },
-  {
-    id: 24,
-    image: port24,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-96", // Different heights for masonry effect
-  },
-  {
-    id: 25,
-    image: port25,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-57", // Different heights for masonry effect
-  },
-  {
-    id: 26,
-    image: port26,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-64", // Different heights for masonry effect
-  },
-  {
-    id: 27,
-    image: port27,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-79", // Different heights for masonry effect
-  },
-  {
-    id: 28,
-    image: port28,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-86", // Different heights for masonry effect
-  },
-  {
-    id: 29,
-    image: port29,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-64", // Different heights for masonry effect
-  },
-  {
-    id: 30,
-    image: port30,
-    alt: "Fotografia Profissional - Bistrô Gourmet",
-    height: "h-87", // Different heights for masonry effect
-  },
+  { id: 1, image: port01, alt: "Design de post para restaurante gourmet — gestão de redes Hode", height: "h-80" },
+  { id: 2, image: port02, alt: "Fotografia profissional de prato principal — cardápio digital", height: "h-64" },
+  { id: 3, image: port03, alt: "Campanha de marketing para restaurante — feed Instagram", height: "h-72" },
+  { id: 4, image: port04, alt: "Foto gastronômica profissional — sobremesa artesanal", height: "h-64" },
+  { id: 5, image: port05, alt: "Identidade visual de restaurante — branding Hode", height: "h-80" },
+  { id: 6, image: port06, alt: "Post promocional de restaurante — tráfego pago", height: "h-72" },
+  { id: 7, image: port07, alt: "Design de cardápio digital — produção de conteúdo", height: "h-64" },
+  { id: 8, image: port08, alt: "Fotografia de ambiente de restaurante — fotografia profissional", height: "h-96" },
+  { id: 9, image: port09, alt: "Story criativo para restaurante — engajamento Instagram", height: "h-64" },
+  { id: 10, image: port10, alt: "Campanha de lançamento de prato — marketing gastronômico", height: "h-80" },
+  { id: 12, image: port12, alt: "Post de divulgação de restaurante — redes sociais", height: "h-64" },
+  { id: 13, image: port13, alt: "Fotografia de prato executivo — ensaio fotográfico", height: "h-80" },
+  { id: 14, image: port14, alt: "Material promocional de restaurante — design criativo", height: "h-72" },
+  { id: 15, image: port15, alt: "Conteúdo para feed de restaurante — copywriting", height: "h-64" },
+  { id: 16, image: port16, alt: "Banner promocional de restaurante — anúncio pago", height: "h-96" },
+  { id: 17, image: port17, alt: "Post de engajamento para restaurante — stories", height: "h-72" },
+  { id: 18, image: port18, alt: "Fotografia gastronômica de entrada — food photography", height: "h-64" },
+  { id: 19, image: port19, alt: "Criação de conteúdo para restaurante — marca premium", height: "h-72" },
+  { id: 20, image: port20, alt: "Design de cardápio para restaurante — identidade visual", height: "h-96" },
+  { id: 21, image: port21, alt: "Post institucional de restaurante — presença digital", height: "h-72" },
+  { id: 22, image: port22, alt: "Campanha especial de restaurante — data comemorativa", height: "h-64" },
+  { id: 23, image: port23, alt: "Fotografia de drink artesanal — bar e restaurante", height: "h-64" },
+  { id: 24, image: port24, alt: "Arte digital para restaurante — promoção semanal", height: "h-96" },
+  { id: 25, image: port25, alt: "Post de resultado de cliente — case de sucesso Hode", height: "h-64" },
+  { id: 26, image: port26, alt: "Fotografia profissional de buffet — evento gastronômico", height: "h-64" },
+  { id: 27, image: port27, alt: "Conteúdo para iFood — otimização de delivery", height: "h-80" },
+  { id: 28, image: port28, alt: "Criação visual para restaurante — branding premium", height: "h-80" },
+  { id: 29, image: port29, alt: "Ensaio fotográfico de restaurante — fotos do chef", height: "h-64" },
+  { id: 30, image: port30, alt: "Design de embalagem para delivery — identidade marca", height: "h-80" },
 ];
 
 export const PortfolioSection = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <section className="py-20 bg-background">
+    <section id="portfolio" className="py-20 bg-background" aria-label="Portfólio de trabalhos">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4 border-gold text-gold">
@@ -244,6 +99,8 @@ export const PortfolioSection = () => {
                     src={item.image} 
                     alt={item.alt}
                     className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
                   />
                   
                   {/* Hover Overlay */}
@@ -277,14 +134,14 @@ export const PortfolioSection = () => {
             <p className="text-lg text-primary/80 mb-6">
               Vamos criar um portfólio único que posicione sua marca como referência no mercado gastronômico
             </p>
-            <Button variant="premium" size="lg">
+            <Button variant="premium" size="lg" asChild>
               <a 
                 href="https://wa.me/5545984295124?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-full"
+                className="flex items-center justify-center"
               >
-              Solicitar Orçamento Personalizado
+                Solicitar Orçamento Personalizado
               </a>
             </Button>
           </div>

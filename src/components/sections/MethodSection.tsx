@@ -35,7 +35,7 @@ const methodSteps = [
 
 export const MethodSection = () => {
   return (
-    <section className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
+    <section id="metodo" className="py-20 bg-primary text-primary-foreground relative overflow-hidden" aria-label="Método SRR">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-dark opacity-90"></div>
       
@@ -99,7 +99,7 @@ export const MethodSection = () => {
               
               {/* Arrow */}
               {index < methodSteps.length - 1 && (
-                <div className="flex justify-center my-4">
+                <div className="flex justify-center my-4" aria-hidden="true">
                   <ArrowDown className="w-8 h-8 text-gold" />
                 </div>
               )}

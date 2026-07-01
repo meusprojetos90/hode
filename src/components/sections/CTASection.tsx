@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle, Clock, Gift } from "lucide-react";
 
 export const CTASection = () => {
   return (
-    <section className="py-20 bg-gradient-dark text-primary-foreground relative overflow-hidden">
+    <section id="contato" className="py-20 bg-gradient-dark text-primary-foreground relative overflow-hidden" aria-label="Agendar consultoria gratuita">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-overlay opacity-20"></div>
       
@@ -48,15 +48,17 @@ export const CTASection = () => {
             variant="hero" 
             size="xl"
             className="animate-gold-pulse hover:animate-none text-xl px-12 py-6"
+            asChild
           >
             <a 
-                href="https://wa.me/5545984295124?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center w-full"
-              >
-            Agendar diagnóstico gratuito
-            <ArrowRight className="w-6 h-6 ml-2" />
+              href="https://wa.me/5545984295124?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20minha%20consultoria%20gratuita" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center justify-center"
+              id="cta-bottom"
+            >
+              Agendar diagnóstico gratuito
+              <ArrowRight className="w-6 h-6 ml-2" />
             </a>
           </Button>
         </div>

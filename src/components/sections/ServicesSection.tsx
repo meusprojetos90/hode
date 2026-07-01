@@ -8,8 +8,9 @@ import {
   Users, 
   BarChart3 
 } from "lucide-react";
+import { type SVGProps } from "react";
 
-const IfoodIcon = (props) => (
+const IfoodIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
     {...props}
     xmlns="http://www.w3.org/2000/svg"
@@ -73,7 +74,7 @@ const services = [
 
 export const ServicesSection = () => {
   return (
-    <section className="py-20 bg-muted">
+    <section id="servicos" className="py-20 bg-muted" aria-label="Serviços de marketing gastronômico">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
