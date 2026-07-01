@@ -6,9 +6,11 @@ import {
   Type, 
   Palette, 
   Users, 
-  BarChart3 
+  BarChart3,
+  ArrowRight
 } from "lucide-react";
 import { type SVGProps } from "react";
+import { Button } from "@/components/ui/button";
 
 const IfoodIcon = (props: SVGProps<SVGSVGElement>) => (
   <svg
@@ -78,8 +80,8 @@ export const ServicesSection = () => {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Serviços
-            <span className="text-gold"> Hode</span>
+            Quais são os Serviços da
+            <span className="text-gold"> Hode?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Soluções completas de marketing gastronômico para transformar 
@@ -121,15 +123,20 @@ export const ServicesSection = () => {
         </div>
         
         <div className="text-center mt-16">
-          <div className="bg-gold rounded-lg p-8 max-w-4xl mx-auto shadow-gold">
+          <div className="bg-gold rounded-lg p-8 max-w-4xl mx-auto shadow-gold mb-8">
             <h3 className="text-2xl font-bold text-primary mb-4">
-              Soluções Integradas para Máximo Resultado
+              Como nossas soluções integradas funcionam?
             </h3>
             <p className="text-lg text-primary/80">
               Todos os nossos serviços trabalham em sinergia para potencializar 
-              o crescimento e a visibilidade do seu restaurante
+              o crescimento e a visibilidade do seu restaurante. Quer saber qual o ideal para você?
             </p>
           </div>
+          <Button variant="gold" size="lg" asChild>
+            <a href="https://wa.me/5545984295124?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os" target="_blank" rel="noopener noreferrer">
+              Solicite uma Proposta Personalizada <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

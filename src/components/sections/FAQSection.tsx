@@ -5,7 +5,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
-import { HelpCircle } from "lucide-react";
+import { HelpCircle, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const faqItems = [
   {
@@ -60,8 +61,8 @@ export const FAQSection = () => {
             Dúvidas Frequentes
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Perguntas
-            <span className="text-gold"> Frequentes</span>
+            Ainda tem dúvidas sobre como 
+            <span className="text-gold"> funciona?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Tire suas dúvidas sobre nossos serviços de marketing gastronômico
@@ -84,6 +85,14 @@ export const FAQSection = () => {
             </AccordionItem>
           ))}
         </Accordion>
+
+        <div className="text-center mt-12">
+          <Button variant="gold" size="lg" asChild>
+            <a href="https://wa.me/5545984295124?text=Ol%C3%A1%2C%20tenho%20uma%20d%C3%BAvida%20sobre%20os%20servi%C3%A7os" target="_blank" rel="noopener noreferrer">
+              Falar com um Especialista no WhatsApp <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   );

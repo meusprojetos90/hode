@@ -1,37 +1,41 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 import LogoHode from "@/assets/Logo-Hode.png";
 
 const navLinks = [
-  { label: "Início", href: "#inicio" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Método", href: "#metodo" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Portfólio", href: "#portfolio" },
-  { label: "Resultados", href: "#resultados" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Contato", href: "#contato" },
+  { label: "Início", href: "/#inicio" },
+  { label: "Sobre Nós", href: "/sobre-nos", isPage: true },
+  { label: "Blog", href: "/blog", isPage: true },
+  { label: "Método", href: "/#metodo" },
+  { label: "Serviços", href: "/#servicos" },
+  { label: "Portfólio", href: "/#portfolio" },
+  { label: "Resultados", href: "/#resultados" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("inicio");
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Detect active section
-      const sections = navLinks.map((link) => link.href.replace("#", ""));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const element = document.getElementById(sections[i]);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 120) {
-            setActiveSection(sections[i]);
-            break;
+      // Detect active section only on home page
+      if (location.pathname === "/") {
+        const sections = navLinks.filter(l => !l.isPage).map((link) => link.href.replace("/#", ""));
+        for (let i = sections.length - 1; i >= 0; i--) {
+          const element = document.getElementById(sections[i]);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top <= 120) {
+              setActiveSection(sections[i]);
+              break;
+            }
           }
         }
       }
@@ -41,11 +45,20 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const target = document.getElementById(href.replace("#", ""));
-    if (target) {
-      target.scrollIntoView({ behavior: "smooth" });
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, link: { href: string; isPage?: boolean }) => {
+    if (link.isPage) {
+      // Let standard React Router navigation handle it (handled by <Link> below)
+      setIsMobileMenuOpen(false);
+      return;
+    }
+    
+    // For hash links
+    if (window.location.pathname === "/") {
+      e.preventDefault();
+      const target = document.getElementById(link.href.replace("/#", ""));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
     }
     setIsMobileMenuOpen(false);
   };
@@ -65,9 +78,9 @@ export const Header = () => {
         aria-label="Navegação principal"
       >
         {/* Logo */}
-        <a
-          href="#inicio"
-          onClick={(e) => handleNavClick(e, "#inicio")}
+        <Link
+          to="/"
+          onClick={() => window.scrollTo(0, 0)}
           className="flex items-center gap-2 z-50"
           aria-label="Hode - Voltar ao início"
         >
@@ -78,24 +91,43 @@ export const Header = () => {
             width={120}
             height={40}
           />
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                activeSection === link.href.replace("#", "")
-                  ? "text-gold bg-gold/10"
-                  : "text-primary-foreground/80 hover:text-gold hover:bg-gold/5"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.isPage 
+              ? location.pathname === link.href 
+              : location.pathname === "/" && activeSection === link.href.replace("/#", "");
+            
+            return link.isPage ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={(e) => handleNavClick(e as any, link)}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  isActive
+                    ? "text-gold bg-gold/10"
+                    : "text-primary-foreground/80 hover:text-gold hover:bg-gold/5"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link)}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  isActive
+                    ? "text-gold bg-gold/10"
+                    : "text-primary-foreground/80 hover:text-gold hover:bg-gold/5"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
         </div>
 
         {/* CTA Button (Desktop) */}
@@ -138,20 +170,39 @@ export const Header = () => {
           aria-modal="true"
           aria-label="Menu de navegação"
         >
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className={`text-2xl font-semibold transition-all duration-300 ${
-                activeSection === link.href.replace("#", "")
-                  ? "text-gold"
-                  : "text-primary-foreground/80 hover:text-gold"
-              }`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = link.isPage 
+              ? location.pathname === link.href 
+              : location.pathname === "/" && activeSection === link.href.replace("/#", "");
+
+            return link.isPage ? (
+              <Link
+                key={link.href}
+                to={link.href}
+                onClick={(e) => handleNavClick(e as any, link)}
+                className={`text-2xl font-semibold transition-all duration-300 ${
+                  isActive
+                    ? "text-gold"
+                    : "text-primary-foreground/80 hover:text-gold"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link)}
+                className={`text-2xl font-semibold transition-all duration-300 ${
+                  isActive
+                    ? "text-gold"
+                    : "text-primary-foreground/80 hover:text-gold"
+                }`}
+              >
+                {link.label}
+              </a>
+            );
+          })}
 
           <Button variant="gold" size="lg" className="mt-4" asChild>
             <a

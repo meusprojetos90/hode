@@ -1,10 +1,11 @@
-# Crawlers permitidos
+# Crawlers de Buscadores Tradicionais
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+# Crawlers de Redes Sociais
 User-agent: Twitterbot
 Allow: /
 
@@ -17,33 +18,40 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# Crawlers de IA — Permitidos para visibilidade
+# Crawlers de Inteligência Artificial (AEO/GEO) — TOTALMENTE PERMITIDOS
 User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
-User-agent: Bytespider
-Disallow: /
+User-agent: ClaudeBot
+Allow: /
 
-User-agent: CCBot
-Disallow: /
+User-agent: anthropic-ai
+Allow: /
 
-# Regra geral
+User-agent: OmgiliBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Regra Geral
 User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
+Disallow: /*?*
 
-# Sitemap
+# Sitemap & LLMs Protocol
 Sitemap: https://hode.com.br/sitemap.xml

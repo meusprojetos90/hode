@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowDown, Zap, Camera, Target, TrendingUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { CheckCircle, ArrowDown, Zap, Camera, Target, TrendingUp, ArrowRight } from "lucide-react";
 
 const methodSteps = [
   {
@@ -45,8 +46,8 @@ export const MethodSection = () => {
             Método Exclusivo
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Método
-            <span className="text-gold"> SRR</span>
+            O que é o Método
+            <span className="text-gold"> SRR?</span>
           </h2>
           <p className="text-xl text-primary-foreground/80 max-w-3xl mx-auto">
             Nossa metodologia comprovada em 4 etapas que transforma restaurantes 
@@ -108,15 +109,20 @@ export const MethodSection = () => {
         </div>
         
         <div className="text-center mt-16">
-          <div className="bg-gold/10 border border-gold/30 rounded-lg p-8 max-w-4xl mx-auto">
+          <div className="bg-gold/10 border border-gold/30 rounded-lg p-8 max-w-4xl mx-auto mb-8">
             <h3 className="text-2xl font-bold text-gold mb-4">
-              Resultado Garantido
+              Por que o resultado é garantido?
             </h3>
             <p className="text-lg text-primary-foreground/90">
               Com o Método SRR, seu restaurante sai do anonimato e se torna uma referência, 
               atraindo mais clientes e aumentando o faturamento de forma consistente.
             </p>
           </div>
+          <Button variant="gold" size="lg" asChild>
+            <a href="https://wa.me/5545984295124?text=Ol%C3%A1%2C%20quero%20aplicar%20o%20M%C3%A9todo%20SRR%20no%20meu%20restaurante" target="_blank" rel="noopener noreferrer">
+              Aplicar o Método no Meu Restaurante <ArrowRight className="w-5 h-5 ml-2" />
+            </a>
+          </Button>
         </div>
       </div>
     </section>

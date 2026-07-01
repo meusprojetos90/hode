@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Instagram, MessageCircle, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
 import LogoHode from "@/assets/Logo-Hode.png";
@@ -134,14 +135,14 @@ export const Footer = () => {
             <div className="pt-4 space-y-2">
               <h5 className="text-sm font-semibold text-primary-foreground/60 uppercase tracking-wider">Navegação</h5>
               <nav aria-label="Links do rodapé" className="grid grid-cols-2 gap-1">
-                <a href="#inicio" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Início</a>
-                <a href="#sobre" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Sobre</a>
-                <a href="#metodo" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Método SRR</a>
-                <a href="#servicos" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Serviços</a>
-                <a href="#portfolio" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Portfólio</a>
-                <a href="#resultados" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Resultados</a>
-                <a href="#faq" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">FAQ</a>
-                <a href="#contato" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Contato</a>
+                <Link to="/" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Início</Link>
+                <Link to="/sobre-nos" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Sobre Nós</Link>
+                <Link to="/blog" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Blog</Link>
+                <Link to="/#metodo" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Método SRR</Link>
+                <Link to="/#servicos" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Serviços</Link>
+                <Link to="/#portfolio" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Portfólio</Link>
+                <Link to="/#faq" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">FAQ</Link>
+                <Link to="/politica-de-privacidade" className="text-sm text-primary-foreground/60 hover:text-gold transition-colors">Privacidade (LGPD)</Link>
               </nav>
             </div>
           </div>

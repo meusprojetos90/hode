@@ -38,6 +38,8 @@ const jsonLdData = {
       ],
       "sameAs": [
         "https://www.instagram.com/hodemkt",
+        "https://www.linkedin.com/company/hode-marketing",
+        "https://www.facebook.com/hodemkt",
         "https://wa.me/5545984295124"
       ],
       "address": {
@@ -48,13 +50,18 @@ const jsonLdData = {
       }
     },
 
-    // 2. LocalBusiness (SEO Local)
+    // 2. ProfessionalService (SEO Local específico)
     {
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
       "@id": "https://hode.com.br/#localbusiness",
       "name": "Hode Marketing Gastronômico",
       "image": "https://hode.com.br/Logo-Hode.png",
       "url": "https://hode.com.br",
+      "sameAs": [
+        "https://www.instagram.com/hodemkt",
+        "https://www.linkedin.com/company/hode-marketing",
+        "https://www.facebook.com/hodemkt"
+      ],
       "telephone": "+55-45-98429-5124",
       "email": "maiarafra@hode.com.br",
       "address": {
