@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowLeft, ArrowRight, Calendar, Clock, User, BookOpen, Search } from "lucide-react";
 import { useState } from "react";
-import LogoHode from "@/assets/Logo-Hode.png";
+import LogoHode from "@/assets/Logo-Hode.webp";
 
 const categoryColors: Record<string, string> = {
   "Redes Sociais": "bg-blue-500/10 text-blue-400 border-blue-500/30",

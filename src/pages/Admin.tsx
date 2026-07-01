@@ -37,7 +37,7 @@ import {
   Users,
   UserPlus,
 } from "lucide-react";
-import LogoHode from "@/assets/Logo-Hode.png";
+import LogoHode from "@/assets/Logo-Hode.webp";
 
 // ===== ADMIN AUTH =====
 const AdminLogin = ({ onLogin }: { onLogin: (user: User) => void }) => {

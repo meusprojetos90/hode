@@ -9,10 +9,21 @@ const PrivacyPolicy = () => {
       <Header />
       
       <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto">
-        <Link to="/" className="inline-flex items-center text-gold hover:underline mb-8">
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Voltar para Home
-        </Link>
+        <nav aria-label="breadcrumb" className="mb-8">
+          <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <li>
+              <Link to="/" className="hover:text-gold transition-colors flex items-center">
+                Home
+              </Link>
+            </li>
+            <li>
+              <span className="mx-2 text-border">/</span>
+            </li>
+            <li className="text-foreground" aria-current="page">
+              Política de Privacidade
+            </li>
+          </ol>
+        </nav>
         
         <div className="prose prose-invert prose-gold max-w-none">
           <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Política de Privacidade</h1>

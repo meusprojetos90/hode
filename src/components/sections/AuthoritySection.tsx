@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, TrendingUp } from "lucide-react";
 
-import MaiaraFra from "@/assets/maiara-fra.jpg";
+import MaiaraFra from "@/assets/maiara-fra.webp";
 
 export const AuthoritySection = () => {
   return (

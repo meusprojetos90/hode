@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-restaurant.jpg";
+import heroImage from "@/assets/hero-restaurant.webp";
 import { ArrowRight, Star } from "lucide-react";
 
 export const HeroSection = () => {

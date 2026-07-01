@@ -17,11 +17,11 @@ const jsonLdData = {
       "url": "https://hode.com.br",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://hode.com.br/Logo-Hode.png",
+        "url": "https://hode.com.br/Logo-Hode.webp",
         "width": 512,
         "height": 512
       },
-      "image": "https://hode.com.br/og-image.png",
+      "image": "https://hode.com.br/og-image.webp",
       "description": "Agência especializada em marketing gastronômico. Transformamos restaurantes em marcas irresistíveis e rentáveis com o Método SRR.",
       "foundingDate": "2022",
       "founder": {
@@ -55,7 +55,7 @@ const jsonLdData = {
       "@type": "ProfessionalService",
       "@id": "https://hode.com.br/#localbusiness",
       "name": "Hode Marketing Gastronômico",
-      "image": "https://hode.com.br/Logo-Hode.png",
+      "image": "https://hode.com.br/Logo-Hode.webp",
       "url": "https://hode.com.br",
       "sameAs": [
         "https://www.instagram.com/hodemkt",

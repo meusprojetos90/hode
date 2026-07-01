@@ -12,7 +12,7 @@ import {
   BookOpen,
   MessageCircle,
 } from "lucide-react";
-import LogoHode from "@/assets/Logo-Hode.png";
+import LogoHode from "@/assets/Logo-Hode.webp";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();

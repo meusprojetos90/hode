@@ -10,10 +10,21 @@ const AboutUs = () => {
       
       <main className="pt-32 pb-20">
         <div className="max-w-6xl mx-auto px-6">
-          <Link to="/" className="inline-flex items-center text-gold hover:underline mb-8">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Voltar para Home
-          </Link>
+          <nav aria-label="breadcrumb" className="mb-8">
+          <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+            <li>
+              <Link to="/" className="hover:text-gold transition-colors flex items-center">
+                Home
+              </Link>
+            </li>
+            <li>
+              <span className="mx-2 text-border">/</span>
+            </li>
+            <li className="text-foreground" aria-current="page">
+              Sobre Nós
+            </li>
+          </ol>
+        </nav>
           
           {/* Hero Section */}
           <section className="mb-20">
@@ -49,7 +60,7 @@ const AboutUs = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gold/20 blur-3xl rounded-full" />
               <img 
-                src="https://hode.com.br/maiara-fra.jpg" 
+                src="https://hode.com.br/maiara-fra.webp" 
                 alt="Maiara Fra - Fundadora da Hode" 
                 className="relative z-10 w-full rounded-2xl border border-gold/30 shadow-luxury object-cover aspect-[4/5]"
                 onError={(e) => {

@@ -1,7 +1,7 @@
 import { useBioLinks } from "@/hooks/use-store";
 import { ExternalLink, Instagram, MessageCircle, Globe, Mail, MapPin, BookOpen } from "lucide-react";
-import LogoHode from "@/assets/Logo-Hode.png";
-import MaiaraFra from "@/assets/maiara-fra.jpg";
+import LogoHode from "@/assets/Logo-Hode.webp";
+import MaiaraFra from "@/assets/maiara-fra.webp";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Globe,

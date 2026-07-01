@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
-import LogoHode from "@/assets/Logo-Hode.png";
+import LogoHode from "@/assets/Logo-Hode.webp";
 
 const navLinks = [
   { label: "Início", href: "/#inicio" },

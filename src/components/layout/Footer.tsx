@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Instagram, MessageCircle, Mail, MapPin, Phone, ExternalLink } from "lucide-react";
-import LogoHode from "@/assets/Logo-Hode.png";
+import LogoHode from "@/assets/Logo-Hode.webp";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
